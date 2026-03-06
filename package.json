@@ -31,8 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/xyz-dl.git"
+    "url": "git+https://github.com/Cyronlee/xyz-dl.git"
   },
+  "bugs": {
+    "url": "https://github.com/Cyronlee/xyz-dl/issues"
+  },
+  "homepage": "https://github.com/Cyronlee/xyz-dl#readme",
   "dependencies": {
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12"
