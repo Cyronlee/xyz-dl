@@ -1,4 +1,4 @@
-# 🎵 xiaoyuzhou-dl
+# 🎵 xyz-dl
 
 下载小宇宙播客音频，自动嵌入专辑封面和元数据。
 
@@ -16,31 +16,31 @@
 
 ```bash
 # 下载单集（自动嵌入封面）
-npx xiaoyuzhou-dl download https://www.xiaoyuzhoufm.com/episode/xxx
+npx xyz-dl download https://www.xiaoyuzhoufm.com/episode/xxx
 
 # 查看播客信息
-npx xiaoyuzhou-dl info https://www.xiaoyuzhoufm.com/episode/xxx
+npx xyz-dl info https://www.xiaoyuzhoufm.com/episode/xxx
 
 # 解析播客主页并下载全部
-npx xiaoyuzhou-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx -a download
+npx xyz-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx -a download
 ```
 
 ### 全局安装
 
 ```bash
-npm install -g xiaoyuzhou-dl
+npm install -g xyz-dl
 
 # 之后可直接使用
-xiaoyuzhou-dl download https://...
+xyz-dl download https://...
 ```
 
 ### 作为库使用
 
 ```javascript
-const xiaoyuzhou = require('xiaoyuzhou-dl');
+const xyz = require('xyz-dl');
 
 async function main() {
-  const result = await xiaoyuzhou.download(
+  const result = await xyz.download(
     'https://www.xiaoyuzhoufm.com/episode/xxx',
     { outputDir: './podcasts' }
   );
@@ -53,7 +53,7 @@ async function main() {
 ### download - 下载单集
 
 ```bash
-npx xiaoyuzhou-dl download <链接> [选项]
+npx xyz-dl download <链接> [选项]
 
 选项:
   -o, --output <目录>     下载目录 (默认：当前目录)
@@ -62,14 +62,14 @@ npx xiaoyuzhou-dl download <链接> [选项]
   -f, --force             覆盖已存在的文件
 
 示例:
-  npx xiaoyuzhou-dl download https://... -o ./podcasts
-  npx xiaoyuzhou-dl download https://... -n my-episode
+  npx xyz-dl download https://... -o ./podcasts
+  npx xyz-dl download https://... -n my-episode
 ```
 
 ### info - 查看信息
 
 ```bash
-npx xiaoyuzhou-dl info <链接>
+npx xyz-dl info <链接>
 
 输出:
   📻 播客信息:
@@ -82,7 +82,7 @@ npx xiaoyuzhou-dl info <链接>
 ### parse - 解析播客主页
 
 ```bash
-npx xiaoyuzhou-dl parse <播客主页> [选项]
+npx xyz-dl parse <播客主页> [选项]
 
 选项:
   -a, --action <动作>     list(默认) | extract | download
@@ -94,19 +94,19 @@ npx xiaoyuzhou-dl parse <播客主页> [选项]
 
 示例:
   # 列出所有集数
-  npx xiaoyuzhou-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx
+  npx xyz-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx
 
   # 下载全部
-  npx xiaoyuzhou-dl parse https://... -a download -o ./podcasts
+  npx xyz-dl parse https://... -a download -o ./podcasts
 
   # 下载最新 10 集
-  npx xiaoyuzhou-dl parse https://... -a download -l 10
+  npx xyz-dl parse https://... -a download -l 10
 ```
 
 ### batch - 批量处理链接列表
 
 ```bash
-npx xiaoyuzhou-dl batch <链接文件> [选项]
+npx xyz-dl batch <链接文件> [选项]
 
 链接文件格式 (episodes.txt):
   https://www.xiaoyuzhoufm.com/episode/xxx
@@ -116,7 +116,7 @@ npx xiaoyuzhou-dl batch <链接文件> [选项]
 ## 📋 输出示例
 
 ```bash
-$ npx xiaoyuzhou-dl download https://www.xiaoyuzhoufm.com/episode/69a7ae58de29766da9595b6d
+$ npx xyz-dl download https://www.xiaoyuzhoufm.com/episode/69a7ae58de29766da9595b6d
 
 ✅ 找到音频:
    标题：EP7 给人文工作者的 AI 使用指南 · Thoughts
@@ -180,8 +180,8 @@ choco install ffmpeg
 ## 🛠️ 开发
 
 ```bash
-git clone https://github.com/USER/xiaoyuzhou-dl.git
-cd xiaoyuzhou-dl
+git clone https://github.com/USER/xyz-dl.git
+cd xyz-dl
 npm install
 
 # 本地测试

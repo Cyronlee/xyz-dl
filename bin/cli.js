@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
 /**
- * xiaoyuzhou-dl - 小宇宙播客下载器
+ * xyz-dl - 小宇宙播客下载器
  * 
  * 命令行入口文件
  */
 
 const { spawn } = require('child_process');
 const path = require('path');
-const fs = require('fs');
 
 const commands = {
   'extract': 'extractor.js',
@@ -21,11 +20,11 @@ const commands = {
 
 function showHelp() {
   console.log(`
-🎵 xiaoyuzhou-dl - 小宇宙播客下载器
+🎵 xyz-dl - 小宇宙播客下载器
 
 用法:
-  npx xiaoyuzhou-dl <command> [options]
-  或全局安装后：xiaoyuzhou-dl <command> [options]
+  npx xyz-dl <command> [options]
+  或全局安装后：xyz-dl <command> [options]
 
 命令:
   extract <链接>           提取音频地址和封面
@@ -38,10 +37,10 @@ function showHelp() {
   -h, --help              显示帮助
 
 示例:
-  npx xiaoyuzhou-dl extract https://www.xiaoyuzhoufm.com/episode/xxx
-  npx xiaoyuzhou-dl download https://... -o ./podcasts
-  npx xiaoyuzhou-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx
-  npx xiaoyuzhou-dl batch episodes.txt -a download
+  npx xyz-dl extract https://www.xiaoyuzhoufm.com/episode/xxx
+  npx xyz-dl download https://... -o ./podcasts
+  npx xyz-dl parse https://www.xiaoyuzhoufm.com/podcast/xxx
+  npx xyz-dl batch episodes.txt -a download
 
 选项:
   -o, --output <目录>     下载目录
@@ -70,7 +69,7 @@ async function main() {
   const scriptFile = commands[command];
   if (!scriptFile) {
     console.error(`❌ 未知命令：${command}`);
-    console.log('使用 xiaoyuzhou-dl --help 查看可用命令');
+    console.log('使用 xyz-dl --help 查看可用命令');
     process.exit(1);
   }
 
@@ -78,7 +77,6 @@ async function main() {
   
   // 为 batch/parse 命令添加特殊处理
   if (['parse', 'batch', 'list'].includes(command)) {
-    // 添加命令标识到参数中
     const newArgs = ['--cmd', command, ...args.slice(1)];
     const child = spawn('node', [scriptPath, ...newArgs], {
       stdio: 'inherit',
