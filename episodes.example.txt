@@ -1,0 +1,6 @@
+# 示例链接列表
+# 每行一个小宇宙播客链接
+# 使用方法：xyz-dl batch episodes.txt -a download
+
+https://www.xiaoyuzhoufm.com/episode/69a7ae58de29766da9595b6d
+https://www.xiaoyuzhoufm.com/episode/699939cade29766da90d95db

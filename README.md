@@ -101,17 +101,34 @@ npx xyz-dl parse <播客主页> [选项]
 
   # 下载最新 10 集
   npx xyz-dl parse https://... -a download -l 10
+
+注意：小宇宙页面为动态加载，部分播客可能无法直接解析。
+      推荐使用 batch 命令 + 链接列表文件方式。
 ```
 
-### batch - 批量处理链接列表
+### batch - 批量处理链接列表（推荐）
 
 ```bash
 npx xyz-dl batch <链接文件> [选项]
 
 链接文件格式 (episodes.txt):
+  # 这是注释
   https://www.xiaoyuzhoufm.com/episode/xxx
   https://www.xiaoyuzhoufm.com/episode/yyy
+
+示例:
+  # 从文件下载全部
+  npx xyz-dl batch episodes.txt -a download
+
+  # 下载前 10 个链接
+  npx xyz-dl batch episodes.txt -a download -l 10
 ```
+
+### 💡 如何获取播客全部链接
+
+1. **手动收集**：在小宇宙 APP 或网页中复制每集链接
+2. **使用 RSS**：如果播客提供 RSS feed，可从中提取 episode 链接
+3. **分享列表**：从小宇宙分享功能获取多集链接
 
 ## 📋 输出示例
 
