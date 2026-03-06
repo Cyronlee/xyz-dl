@@ -1,6 +1,6 @@
 {
   "name": "xyz-dl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "下载小宇宙播客音频，自动嵌入专辑封面和元数据",
   "main": "index.js",
   "bin": {
