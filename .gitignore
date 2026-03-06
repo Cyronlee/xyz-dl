@@ -1,0 +1,10 @@
+node_modules/
+*.m4a
+*.log
+downloads/
+test-*/
+result-*.json
+.DS_Store
+Thumbs.db
+*.tmp
+temp_*

@@ -1,0 +1,45 @@
+{
+  "name": "xiaoyuzhou-dl",
+  "version": "1.0.0",
+  "description": "下载小宇宙播客音频，自动嵌入专辑封面和元数据",
+  "main": "index.js",
+  "bin": {
+    "xiaoyuzhou-dl": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "index.js"
+  ],
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "xiaoyuzhou",
+    "podcast",
+    "audio",
+    "downloader",
+    "小宇宙",
+    "播客"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/USER/xiaoyuzhou-dl.git"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "optionalDependencies": {
+    "music-metadata": "^8.0.0"
+  },
+  "peerDependencies": {
+    "ffmpeg-static": "^5.0.0"
+  }
+}
